@@ -1,0 +1,115 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #333;
+	font-size: 3.6rem;
+	overflow: hidden;
+}
+
+.off{
+	display: none;
+}
+.alert {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(150%, -50%);
+	width: 60vw;
+	height: 60vh;
+	color: whitesmoke;
+	text-align: center;
+	border: 3px solid whitesmoke;
+	animation: move  10s linear forwards;
+}
+.active{
+	display: block;
+}
+h1 {
+	padding: 10px;
+}
+h2 {
+	padding: 10px;
+}
+h3 {
+	margin-top: 40px;
+	padding: 20px;
+	font-size: 0.9em;
+}
+
+.btn {
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+	background-color: rgba(221, 204, 204, 0.2);
+	border-radius: 25px;
+	border: 3px solid red;
+	color: red;
+	box-shadow: 5px 5px 10px, -5px -5px 10px;
+	cursor: pointer;
+	animation: heartbeat 2s infinite;
+}
+.btn:active {
+	background-color: #fff;
+	animation: pause;
+}
+@keyframes move {
+	0% {
+		transform: translate(150%, -50%);
+	}
+	25% {
+		transform: translate(-50%, -50%);
+	}
+	45% {
+		transform: scale(1) translate(-50%, -50%);
+	}
+	50% {
+		transform: scale(1.2) translate(-50%, -50%);
+	}
+	55% {
+		transform: scale(1) translate(-50%, -50%);
+	}
+	60% {
+		transform: scale(1.2) translate(-50%, -50%);
+	}
+	65% {
+		transform: scale(1) translate(-50%, -50%);
+	}
+	100% {
+		transform: translate(-200%, -50%);
+	}
+}
+@keyframes heartbeat {
+	from {
+		transform: scale(1) translate(-50%, -50%);
+		transform-origin: center center;
+		animation-timing-function: ease-out;
+	}
+	10% {
+		transform: scale(0.91) translate(-50%, -50%);
+		animation-timing-function: ease-in;
+	}
+	17% {
+		transform: scale(0.98) translate(-50%, -50%);
+		animation-timing-function: ease-out;
+	}
+	33% {
+		transform: scale(0.87) translate(-50%, -50%);
+		animation-timing-function: ease-in;
+	}
+	45% {
+		transform: scale(1) translate(-50%, -50%);
+		animation-timing-function: ease-out;
+	}
+}
